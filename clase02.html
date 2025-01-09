@@ -33,15 +33,17 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<h1 class="major">Clase 02</h1>
-				<span class="image fit"><img src="https://www.diarlu.com/wp-content/uploads/2019/02/gestores_bases-datos.jpg" alt="" /></span>
+				<span class="image fit"><img
+						src="https://www.diarlu.com/wp-content/uploads/2019/02/gestores_bases-datos.jpg"
+						alt="" /></span>
 				<p>
-					Una base de datos es una recopilación organizada de información o datos estructurados, 
-					que normalmente se almacena de forma electrónica en un sistema informático. 
-					Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS). 
-					En conjunto, los datos y el DBMS, junto con las aplicaciones asociadas a ellos, 
+					Una base de datos es una recopilación organizada de información o datos estructurados,
+					que normalmente se almacena de forma electrónica en un sistema informático.
+					Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS).
+					En conjunto, los datos y el DBMS, junto con las aplicaciones asociadas a ellos,
 					reciben el nombre de sistema de bases de datos, abreviado normalmente a simplemente base de datos.
 				</p>
-				
+
 				<lu>
 					<li>SqlServer</li>
 					<li>MySql</li>
@@ -50,7 +52,16 @@
 					<li>Sqlite</li>
 					<li>MongoDb</li>
 				</lu>
-				
+
+				<div class="contenedor-diagrama">
+					<pre class="mermaid">
+					flowchart TD
+						A[Api] --> B[Reglas de negocio]    
+						B --> D[Repositorios]
+						D -.-> sql[(Sql)]
+						D -.-> nosql[(noSql)]
+					</pre>
+				</div>
 				<h1 class="major">MySql y MongoDb en docker</h1>
 				<p>Ahora vamos a usar nuestro docker para instalar estas bases de datos, hacer un par de consultas.</p>
 				<p>Vamos a bajar una aplicación sencilla para conectarse a las bases</p>
