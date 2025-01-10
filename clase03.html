@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>CVS - Clase 03</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="icon" type="image/x-icon" href="images/Ico.png" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Ciclo de vida del software</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Clase 03</h1>
+				<span class="image fit"><img
+						src="https://i.pinimg.com/originals/91/7b/91/917b91356dd1f9c4a89585ead802e261.jpg"
+						alt="" /></span>
+				<p>
+					En programación se usan diferentes lenguajes de programación, para darno una idea veamos los más populares
+				</p>
+				<a href="https://www.tiobe.com/tiobe-index/" target="_blank">Ranking de lenguajes</a>
+
+				<h1 class="major">Api Rest</h1>
+
+				<p>
+					La wikipedia dice
+				</p>
+				<blockquote>
+					La transferencia de estado representacional (en inglés representational state transfer) 
+					o REST es un estilo de arquitectura software para sistemas hipermedia distribuidos como la World Wide Web.
+				</blockquote>
+
+				<p>
+					REST afirma que la web ha disfrutado de escalabilidad como resultado de una serie de diseños fundamentales clave:
+				</p>
+				<blockquote>
+					<ul>
+						<li>
+							Un protocolo cliente/servidor sin estado: cada mensaje HTTP contiene toda la información necesaria para comprender la petición. Como resultado, ni el cliente ni el servidor necesitan recordar ningún estado de las comunicaciones entre mensajes. Sin embargo, en la práctica, muchas aplicaciones basadas en HTTP utilizan cookies y otros mecanismos para mantener el estado de la sesión.
+						</li>
+						<li>
+							Un conjunto de operaciones bien definidas que se aplican a todos los recursos de información: HTTP en sí define un conjunto pequeño de operaciones, las más importantes son POST, GET, PUT y DELETE. Con frecuencia estas operaciones se equiparan a las operaciones CRUD en bases de datos.
+						</li>
+						<li>
+							Una sintaxis universal para identificar los recursos. En un sistema REST, cada recurso es direccionable únicamente a través de su URI.
+						</li>						
+					</ul>
+				</blockquote>
+
+
+				<div class="contenedor-diagrama">
+					<pre class="mermaid">
+					flowchart TD
+						A[Api] --> B[Reglas de negocio]    
+						B --> D[Repositorios]
+						D --> MySql[(MySql)]						
+					</pre>
+				</div>
+				<p>
+					Ahora vamos a la practica, descargue el repositorio en java y habilite su base de datos MySql en docker para ir probando
+				</p>
+				<a href="https://github.com/vmartinez1984/Crud_JavaMysql.git">https://github.com/vmartinez1984/Crud_JavaMysql.git</a>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<!-- Scripts -->
+	<script type="module">
+		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+		mermaid.initialize({ startOnLoad: true });
+	</script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
