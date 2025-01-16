@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>CVS - Clase 03</title>
+	<title>CVS - Clase 04</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -33,38 +33,186 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<h1 class="major">Clase 03</h1>
-				<span class="image fit"><img
-						src="https://uploads-ssl.webflow.com/60b6aab79e7b19b0ad7df147/629948c11326a7b6f5f47480_pasarelas-de-pago.jpg"
-						alt="" /></span>
+				<span class="image fit"><img src="images/Maui01.webp" alt="" /></span>
 				<p>
-					Como sabemos en un mundo capitalista lo que impera es el dinero y es por eso que debero de ver una fracción de esto, en este 
-					caso las pasarelas de pagos.
+					Normalmente cuando entramos a una empresa a laborar, el proyecto esta en funcionamiento, se nos
+					pedira que resolvamos un error, realicemos una nueva funcionalidad o implementemos un servicio.
 				</p>
-				
-				¿Que es una pasarela de pagos?
+				<p>
+					Para esto debemos de conocer las áreas más comunes
+				</p>
+				<lu>
+					<li>Desarrollo</li>
+					<li>Pruebas</li>
+					<li>Project Managment</li>
+					<li>Comercial</li>
+					<li>Dirección</li>
+					<li>Infraestructura</li>
+				</lu>
+				<p>
+					https://www.menti.com/alnfbcehwdm3
+				</p>
+				<span class="image"><img src="images/mentimeter_qr_code.png" alt="" /></span>
+				<br />
+				<br />
+				<br />
+
+				<h1 class="major">Diagrama de un proyecto general</h1>
+				<div class="contenedor-diagrama">
+					<pre class="mermaid">
+						flowchart TD
+						A[Frontend] --> B[Reglas de negocio]
+						B --> C[Servicios]
+						B --> D[Repositorios]
+						B --> E[Almacenes]
+						</pre>
+				</div>
+
 				<blockquote>
-					Es un dispositivo físico o virtual para realizar transacciones entre un vendedor y un comprador.
-					<br/>
-					Se utiliza tanto en negocios en línea como físicos para realizar transacciones comerciales, al
-					tiempo que mantiene la seguridad.					
+
+					Donde <br />
+					El frontend, es la aplicación donde el usuario final interactua, ya sea una pagina web, applicación
+					mobile.<br />
+
+					Las reglas de negocio, es donde se aplican validaciones, autorizaciones, comprobaciones, promociones
+					etc.<br />
+
+					Repositorio es donde se persiste la data o tiene su origen, que puede ser un txt, excel, csv, json,
+					base de datos sql, base de datos no sql.<br />
+
+					Servicio es un auxiliar a la reglas de negocios que ayuda a validar, verificar o procesar, por
+					ejemplo en un proceso de enrolamiento o registro se sacan fotos a la ine y se manda aun servicio
+					este devuelve la consistencia de los datos, algun parametro de autenticidad y los datos extraidos.
+					Este es proporcionado por algun proveedor o tercero.<br />
+
+					Los almacenes es donde se guardan los archivos, por ejemplo las fotos del ine, documentación del
+					cliente, contratos fimados por el cliente, imagenes, videos etc. <br />
+
+					En terminos ideales deben existir documentación de los procesos, manuales de los servicios,
+					implementacion de los servicios, bases de datos, conexiones. <br />
+
+					Tip, en caso de no existir documentelos usted de la manera sencilla y rápida en la herramienta que
+					tenga a su alcance, puede usar Notion, .md o alguna wiki. <br />
 				</blockquote>
 
+				<h1 class="major">Analisis y planificación</h1>
+
 				<p>
-					Para esto debemos de saber un par de conceptos antes
+
+					La fase de planificación incluye normalmente tareas como análisis de costos y beneficios, programación,
+					estimación de recursos y asignación. El equipo de desarrollo recopila requisitos de varias partes
+					interesadas, como clientes, expertos internos y externos, así como directivos, para crear un documento
+					de especificaciones con los requisitos del software.
 				</p>
 
-				<blockquote>
-					Un webhook consiste en una comunicación ligera basada en eventos que envía datos automáticamente entre las aplicaciones a través del protocolo HTTP.
-				</blockquote>
-				
-				
-
-				<span class="image fit"><img src="https://i0.wp.com/blog.pyme.pe/wp-content/uploads/2015/04/pasarela-de-pagos.png" /></span>
-				
 				<p>
-					Ahora vamos a la practica
-				</p>				
-				
+
+					El documento establece las especificaciones y define los objetivos comunes que ayudan a planificar el
+					proyecto. El equipo estima los costos, define una programación y dispone de un plan detallado para
+					conseguir los objetivos.
+				</p>
+
+				<p>
+					En esta parte va lo documentación, aqui es donde el PM, se encarga de realizar los diagramas, las
+					actividades, documentación interna de la empresa.
+				</p>
+
+				Tenemos una aplicación construida masomenos asi:
+				<div class="contenedor-diagrama">
+					<pre class="mermaid">
+						flowchart TD
+						subgraph App
+						ReglasDeNegocio <--> Repositorios
+						ReglasDeNegocio <--> Almacenes
+						ReglasDeNegocio <--> Servicios    
+						end
+						subgraph Presentacion
+							ApiRest <--> ReglasDeNegocio        
+							MVC <--> ReglasDeNegocio
+							
+						end 
+						subgraph Front
+							ApiRest <--> PaginaWeb
+							ApiRest <--> AppMobile
+						end
+						Presentacion <--> Usuario(Usuario)
+						Front <--> Usuario
+						</pre>
+				</div>
+				<br/>
+
+				<p>
+					Vamos a empezar con una práctica, vamos a hacer un despligue de un aplicación web muy simple, 
+					es decir nuestro hola mundo, para esto usaremos el visual studio code y 
+					un plugins que nos sirvira como servidor de aplicaciones live server
+				</p>
+
+				<h1 class="major">Publicar en GithubPages</h1>
+
+				<h2>Instalar git y crear una cuenta en Github.</h2>
+
+				<blockquote>
+					git init <br />
+					git add . <br />
+					git commit -m "Primer commit" <br />
+					git remote add origin https://github.com/tuusuario/tu-repositorio.git <br />
+					git push -u origin master <br />
+				</blockquote>
+
+				<h2>Habilitar GitHub Pages</h2>
+
+				Una vez que tu código está en GitHub:
+				<blockquote>
+
+					1. Ve a tu repositorio en GitHub. <br />
+					2. En el menú superior, entra en **Settings** (Configuración).<br />
+					3. Desplázate a la sección **Pages** (barra lateral izquierda).<br />
+					4. En la sección **Source**, selecciona la rama `main` (o `master`) y guarda. <br />
+					5. Si el código está en una carpeta específica (ej., `docs` o `dist`), selecciona esa carpeta como
+					raíz.
+				</blockquote>
+
+				<h2>Esperar la publicación</h2>
+				GitHub tomará unos minutos en desplegar el sitio
+				<blockquote>
+					https://tu-usuario.github.io/nombre-del-repositorio/
+				</blockquote>
+
+				<h1 class="major">Docker</h1>
+
+				<p>
+					Primero veremos una maquina virtual y su caracracteristicas
+				</p>
+
+				<p>Ahora vamos instalar docker en windows, bajar y correr nginx</p>
+
+				<p>Con scripts</p>
+				<blockquote>
+					FROM nginx:alpine <br />
+
+					COPY . /usr/share/nginx/html <br />
+
+					EXPOSE 80 <br />
+				</blockquote>
+				<blockquote>
+					docker build -t mi-sitio .
+				</blockquote>
+				<blockquote>
+					docker run -d --name mi-sitio -p 5000:80 mi-sitio
+				</blockquote>
+
+				<h1 class="major">Recapitulando</h1>
+				<ul>
+					<li>Puerto</li>
+					<li>servidor</li>
+					<li>Publicación</li>
+					<li>Despliegue</li>
+					<li>Repositorio</li>
+					<li>Linux</li>
+					<li>Contenedor</li>
+					<li>Maquina Virtual</li>
+				</ul>
+
 			</div>
 		</section>
 
